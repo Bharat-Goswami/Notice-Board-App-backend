@@ -24,7 +24,7 @@ router.get('/',authenticationToken,async(req,res)=>{
 
     try {
         const user = req.user;
-        const notices = await Notice.find({user:user_id});
+        const notices = await Notice.find({user:user._id});
         res.json(notices)
     } catch (error) {
         console.log(error);
